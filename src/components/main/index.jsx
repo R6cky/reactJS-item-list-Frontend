@@ -1,9 +1,10 @@
 import { List } from "../list";
 import { MainStyle } from "./style";
+import { Header } from "../Header";
 export const Main = ({ list }) => {
   return (
     <MainStyle>
-      <header>Header</header>
+      <Header />
       <main>
         <List list={list} />
       </main>
