@@ -4,25 +4,32 @@ export const ItemStyle = styled.div`
   width: 400px;
   height: 100px;
   margin-top: 20px;
-  border: solid gray;
+  border: solid gray 0.2px;
   text-align: center;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 
   .list-name {
-    border: solid red;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 30%;
+    font-size: 22px;
+    font-weight: bold;
   }
 
-  .view-itens {
+  .view-remove {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
     font-size: 1rem;
-    cursor: pointer;
-    :hover {
-      text-decoration: underline;
+    span {
+      :hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
 `;

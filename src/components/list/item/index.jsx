@@ -6,8 +6,9 @@ export const Item = ({ item }) => {
         <span>Nome da lista:{item.listName}</span>
       </div>
 
-      <div className="view-itens">
+      <div className="view-remove">
         <span>Ver Itens da lista</span>
+        <span>Remover</span>
       </div>
     </ItemStyle>
   );
