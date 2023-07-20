@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Main } from "./components/main";
 import { api } from "./api";
+import { RoutesMain } from "./routes";
+import { Main } from "./components/main";
 function App() {
   const [list, setlist] = useState([]);
 
