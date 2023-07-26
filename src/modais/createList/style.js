@@ -12,6 +12,10 @@ export const CreateListStyle = styled.div`
   justify-content: center;
   align-items: center;
 
+  label {
+    color: gray;
+  }
+
   .close-modal {
     width: 90%;
     height: 40px;
@@ -36,7 +40,6 @@ export const CreateListStyle = styled.div`
       width: 100%;
       max-width: 100%;
       height: 100%;
-      max-height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
