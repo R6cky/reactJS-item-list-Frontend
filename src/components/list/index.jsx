@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Item } from "./item";
 import { ListStyle } from "./style";
-export const List = ({ list }) => {
+import { ListContext } from "../../context/contextList";
+export const List = () => {
+  const { list } = useContext(ListContext);
   return (
     <ListStyle>
       {list.length > 0 ? (

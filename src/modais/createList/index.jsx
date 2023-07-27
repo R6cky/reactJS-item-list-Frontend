@@ -21,6 +21,10 @@ export const CreateList = () => {
           name: data.itemName,
           quantity: data.itemQuantity,
         },
+        {
+          name: data.itemName1,
+          quantity: data.itemQuantity1,
+        },
       ],
     };
 
@@ -62,19 +66,19 @@ export const CreateList = () => {
             <label htmlFor="itemQuantity">Quantidade de itens</label>
             <hr />
             <input
-              name="itemName"
+              name="itemName1"
               ype="text"
               placeholder="Nome do item"
-              {...register("itemName")}
+              {...register("itemName1")}
             />
-            <label htmlFor="itemName">Nome do item</label>
+            <label htmlFor="itemName1">Nome do item</label>
             <input
-              name="itemQuantity"
+              name="itemQuantity1"
               type="text"
               placeholder="Quantidade item"
-              {...register("itemQuantity")}
+              {...register("itemQuantity1")}
             />
-            <label htmlFor="itemQuantity">Quantidade de itens</label>
+            <label htmlFor="itemQuantity1">Quantidade de itens</label>
             <hr />
           </div>
           <div className="container-buttons">

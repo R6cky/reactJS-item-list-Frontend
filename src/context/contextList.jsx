@@ -5,12 +5,16 @@ import { ModalContext } from "./contextModais";
 export const ListContext = createContext({});
 
 export const ListProvider = ({ children }) => {
+  const [list, setList] = useState([]);
   const [viewList, setViewList] = useState([]);
-  const { setModalViewItem, setModalEditItem } = useContext(ModalContext);
+  const { setModalViewItem, setModalEditItem, setModalCreateList } =
+    useContext(ModalContext);
 
   const createList = async (data) => {
     try {
-      const responseJson = await api.post("/purchaseList", data);
+      const responseJson = await api.post("/purchasseList", data);
+      setList([...list, responseJson.data]);
+      setModalCreateList(false);
     } catch (err) {
       console.log(err);
     }
@@ -71,6 +75,8 @@ export const ListProvider = ({ children }) => {
         editItemModal,
         deleteLists,
         deleteItems,
+        list,
+        setList,
       }}
     >
       {children}

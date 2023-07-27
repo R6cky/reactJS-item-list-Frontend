@@ -7,18 +7,20 @@ import { useContext } from "react";
 import { ModalContext } from "./context/contextModais";
 import { EditItem } from "./modais/editItems";
 import { ViewItem } from "./modais/viewItem";
+import { ListContext } from "./context/contextList";
 
 function App() {
-  const [list, setlist] = useState([]);
+  // const [list, setlist] = useState([]);
   const [loading, setLoading] = useState(true);
   const { modalCreateList, modalEditItem, modalViewItem } =
     useContext(ModalContext);
+  const { list, setList } = useContext(ListContext);
 
   useEffect(() => {
     const getList = async () => {
       try {
         const response = (await api.get("/purchaseList")).data;
-        setlist(...list, response);
+        setList(...list, response);
       } catch (error) {
         console.log(error);
       } finally {
@@ -42,7 +44,7 @@ function App() {
       ) : (
         false
       )}
-      <RoutesMain loading={loading} list={list} />
+      <RoutesMain loading={loading} />
     </>
   );
 }

@@ -7,7 +7,7 @@ import { Main } from "./components/main";
 export const RoutesMain = ({ list, loading }) => {
   return (
     <Routes>
-      <Route path="/" element={<Main loading={loading} list={list} />} />
+      <Route path="/" element={<Main loading={loading} />} />
       <Route path="/createList" element={<CreateList />} />
       <Route path="/viewItem" element={<ViewItem />} />
       <Route path="/editItem" element={<EditItem />} />
