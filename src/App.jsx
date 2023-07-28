@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "./api";
 import { RoutesMain } from "./routes";
-import { BrowserRouter } from "react-router-dom";
 import { CreateList } from "./modais/createList";
 import { useContext } from "react";
 import { ModalContext } from "./context/contextModais";
@@ -10,7 +9,6 @@ import { ViewItem } from "./modais/viewItem";
 import { ListContext } from "./context/contextList";
 
 function App() {
-  // const [list, setlist] = useState([]);
   const [loading, setLoading] = useState(true);
   const { modalCreateList, modalEditItem, modalViewItem } =
     useContext(ModalContext);

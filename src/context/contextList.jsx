@@ -12,7 +12,7 @@ export const ListProvider = ({ children }) => {
 
   const createList = async (data) => {
     try {
-      const responseJson = await api.post("/purchasseList", data);
+      const responseJson = await api.post("/purchaseList", data);
       setList([...list, responseJson.data]);
       setModalCreateList(false);
     } catch (err) {
@@ -33,10 +33,14 @@ export const ListProvider = ({ children }) => {
   const editItem = async (idList, dataRequest) => {
     const itemId = localStorage.getItem("itemId");
     try {
-      const responseJson = await api.patch(
-        `/purchaseList/${idList}/${itemId}`,
-        dataRequest
-      );
+      await api.patch(`/purchaseList/${idList}/${itemId}`, dataRequest);
+      try {
+        const responseJson = await api.get(`/purchaseList`);
+        setViewList(responseJson.data);
+        setModalEditItem(false);
+      } catch (err) {
+        console.log(err);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -49,7 +53,13 @@ export const ListProvider = ({ children }) => {
 
   const deleteLists = async (listId) => {
     try {
-      const responseJson = await api.delete(`/purchaseList/${listId}`);
+      await api.delete(`/purchaseList/${listId}`);
+      try {
+        const responseJson = await api.get(`/purchaseList`);
+        setList(responseJson.data);
+      } catch (err) {
+        console.log(err);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -60,6 +70,12 @@ export const ListProvider = ({ children }) => {
       const responseJson = await api.delete(
         `/purchaseList/${listId}/${itemId}`
       );
+      try {
+        const responseJson = await api.get("/purchaseList");
+        setViewList(responseJson.data);
+      } catch (err) {
+        console.log(err);
+      }
     } catch (error) {
       console.log(error);
     }
