@@ -26,8 +26,8 @@ export const EditItem = () => {
     <EditItemStyle>
       <div className="container-modal">
         <form action="" onSubmit={handleSubmit(formData)}>
-          <div onClick={() => setModalEditItem(false)} className="close-modal">
-            X
+          <div className="close-modal">
+            <span onClick={() => setModalEditItem(false)}>X</span>
           </div>
 
           <div className="container-item-data">
@@ -45,8 +45,13 @@ export const EditItem = () => {
             />
           </div>
           <div className="container-buttons">
-            <input type="submit" placeholder="Enviar" value={"Editar item"} />
-            <input type="reset" value={"Redefinir"} />
+            <input
+              type="submit"
+              placeholder="Enviar"
+              value={"Editar item"}
+              className="btn-edit"
+            />
+            <input type="reset" value={"Redefinir"} className="btn-reset" />
           </div>
         </form>
       </div>

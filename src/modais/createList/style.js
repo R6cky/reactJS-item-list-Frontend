@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CreateListStyle = styled.div`
   width: 100vw;
   height: 100vh;
-  border: solid red;
+  border: solid var(--color2);
   position: absolute;
   top: 0px;
   left: 0px;
@@ -13,7 +13,7 @@ export const CreateListStyle = styled.div`
   align-items: center;
 
   label {
-    color: gray;
+    color: var(--color2);
   }
 
   .close-modal {
@@ -25,6 +25,7 @@ export const CreateListStyle = styled.div`
     align-items: center;
     color: gray;
     margin: 0 auto;
+    color: var(--color2);
   }
 
   .container-modal {
@@ -44,7 +45,7 @@ export const CreateListStyle = styled.div`
       flex-direction: column;
       justify-content: space-around;
       background: black;
-      border: solid gray;
+      border: solid var(--color2);
     }
 
     input {
@@ -54,6 +55,24 @@ export const CreateListStyle = styled.div`
       padding: 5px;
       border-radius: 4px;
       font-size: 14px;
+      background: white;
+      color: var(--color1);
+    }
+
+    .btn-submit {
+      :hover {
+        background: var(--color1);
+        color: var(--color2);
+        border: solid var(--color2);
+      }
+    }
+
+    .btn-reset {
+      :hover {
+        background: var(--color1);
+        color: var(--color2);
+        border: solid var(--color2);
+      }
     }
 
     .container-list-name {

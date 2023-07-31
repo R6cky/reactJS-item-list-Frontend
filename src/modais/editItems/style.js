@@ -29,17 +29,37 @@ export const EditItemStyle = styled.div`
       flex-direction: column;
       justify-content: space-around;
       background: black;
-      border: solid gray;
+      border: solid var(--color2);
 
       .close-modal {
         width: 90%;
         height: 100px;
-        cursor: pointer;
+
         display: flex;
         justify-content: end;
         align-items: center;
-        color: gray;
+        color: var(--color2);
         margin: 0 auto;
+
+        span {
+          cursor: pointer;
+        }
+      }
+
+      .btn-edit {
+        :hover {
+          background: var(--color1);
+          color: var(--color2);
+          border: solid var(--color2) 0.5px;
+        }
+      }
+
+      .btn-reset {
+        :hover {
+          background: var(--color1);
+          color: var(--color2);
+          border: solid var(--color2) 0.5px;
+        }
       }
     }
 
@@ -50,6 +70,7 @@ export const EditItemStyle = styled.div`
       padding: 5px;
       border-radius: 4px;
       font-size: 14px;
+      color: var(--color1);
     }
 
     .container-item-data {

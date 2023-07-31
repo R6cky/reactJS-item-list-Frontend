@@ -82,8 +82,13 @@ export const CreateList = () => {
             <hr />
           </div>
           <div className="container-buttons">
-            <input type="submit" placeholder="Enviar" value={"Criar lista"} />
-            <input type="reset" value={"Redefinir"} />
+            <input
+              type="submit"
+              placeholder="Enviar"
+              value={"Criar lista"}
+              className="btn-submit"
+            />
+            <input type="reset" value={"Redefinir"} className="btn-reset" />
           </div>
         </form>
       </div>
